@@ -11,4 +11,6 @@
   -webkit-box-shadow: $full;
      -moz-box-shadow: $full;
           box-shadow: $full;
+
+  @include css-pie;
 }

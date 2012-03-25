@@ -1,3 +1,40 @@
+// Notes
+// 1. IE support is added automatically on
+//    - border-radius
+//    - border-image
+//    - box-shadow
+//    - linear-gradient
+//    - text-shadow
+// 2. When you use an rgba statement, to support IE add the line
+//    @include css-pie;
+
+// IE Support enabled by default
+$ie-support: true;
+$pie-path: '/assets/PIE.htc';
+$ie-css-path: '/assets/ie-css3.htc';
+
+// IE support for
+// border-radius
+// box-shadow
+// border-image
+// CSS3 Backgrounds (-pie-background)
+// Gradients
+// RGBA Color Values
+// http://css3pie.com/documentation/supported-css3-features/
+@mixin css-pie {
+  @if $ie-support {
+    behavior: url($pie-path);
+  }
+}
+
+// IE support for text-shadow
+// http://www.fetchak.com/ie-css3/
+@mixin ie-css {
+  @if $ie-support {
+    behavior: url($ie-css-path);
+  }
+}
+
 // Custom Functions
 @import "functions/deprecated-webkit-gradient";
 @import "functions/flex-grid";
@@ -33,3 +70,7 @@
 @import "addons/hide-text";
 @import "addons/html5-input-types";
 @import "addons/timing-functions";
+
+.test {
+  @include border-top-radius(15px);
+}

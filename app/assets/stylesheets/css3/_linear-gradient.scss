@@ -33,6 +33,8 @@
   background-image:      -ms-linear-gradient($pos, $full);
   background-image:       -o-linear-gradient($pos, $full);
   background-image: unquote("linear-gradient(#{$pos}, #{$full})");
+
+  @include css-pie;
 }
 
 

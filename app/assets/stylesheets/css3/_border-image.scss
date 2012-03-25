@@ -3,6 +3,8 @@
      -moz-border-image: border-add-prefix($images, moz);
        -o-border-image: border-add-prefix($images, o);
           border-image: border-add-prefix($images);
+
+  @include css-pie;
 }
 
 @function border-add-prefix($images, $vendor: false) {
